@@ -1,5 +1,5 @@
 """python -m recap --courses DIR --listen HOST:PORT
-    starts PoliTo Recap, listening on HOST:PORT. The container launches it
+    starts Lessons Recap, listening on HOST:PORT. The container launches it
     (docker-compose.yml). The settings come from the environment (settings.py).
 """
 from __future__ import annotations

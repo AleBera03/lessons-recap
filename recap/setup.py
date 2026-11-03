@@ -140,7 +140,7 @@ def main() -> None:
         _fit(env)
     _data_folders(folder, env.get("RECAP_DATA") or "./data", owner)
     env.save(owner)
-    print(f"\nSaved to .env. Start PoliTo Recap, or restart it with the new settings:\n"
+    print(f"\nSaved to .env. Start Lessons Recap, or restart it with the new settings:\n"
           f"  docker compose up -d\nthen open http://localhost:{env.get('RECAP_PORT') or 8470}")
 
 

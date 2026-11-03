@@ -1,6 +1,7 @@
 # Only the program goes into the image: data and .env stay outside.
 *
-!requirements.txt
+!pyproject.toml
+!uv.lock
 !.env.example
 !recap/
 **/__pycache__/

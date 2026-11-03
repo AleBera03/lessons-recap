@@ -1,4 +1,4 @@
-"""PoliTo Recap's settings: environment variables, that is the .env file next to
+"""Lessons Recap's settings: environment variables, that is the .env file next to
 docker-compose.yml, plus HF_HOME, the models folder the Dockerfile sets. They are read only
 here, once, with their defaults; the commented list for whoever installs it is .env.example,
 and the setup (setup.py) writes who writes the notes. At startup the app checks what it can
@@ -15,7 +15,7 @@ from pathlib import Path
 
 OCR_MODELS = ("tiny", "small", "medium")
 THREADS = 4      # CPU threads by default, and the most the setup gives: more is slower on CPUs with slow cores (transcription.py)
-DEFAULT_UPDATE_URL = "https://api.github.com/repos/capufa/polito-recap/releases/latest"
+DEFAULT_UPDATE_URL = "https://api.github.com/repos/AleBera03/lessons-recap/releases/latest"
 VERSION_FILE = Path(__file__).resolve().parent.parent / "VERSION"     # written by the Dockerfile
 
 

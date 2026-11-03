@@ -1,4 +1,5 @@
 __pycache__/
+.venv
 # The data and the keys of whoever runs it: never in the repository.
 .env
 data/

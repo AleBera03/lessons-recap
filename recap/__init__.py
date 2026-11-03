@@ -1,5 +1,5 @@
 """
-PoliTo Recap (the package is recap) — from a recorded lecture (video with slides, or voice
+Lessons Recap (the package is recap) — from a recorded lecture (video with slides, or voice
 only) to a page to study.
 
 WHY

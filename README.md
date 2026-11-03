@@ -1,4 +1,4 @@
-# PoliTo Recap
+# Lessons Recap
 
 > **Vibe-coded**: written by prompting an AI coding assistant, and tested on real lectures.
 
@@ -62,9 +62,9 @@ reboot.
 ## Install
 
 ```sh
-mkdir polito-recap
-cd polito-recap
-curl -LO https://raw.githubusercontent.com/capufa/polito-recap/main/docker-compose.yml
+mkdir lessons-recap
+cd lessons-recap
+curl -LO https://raw.githubusercontent.com/AleBera03/lessons-recap/main/docker-compose.yml
 docker compose run --rm setup
 ```
 
@@ -197,13 +197,13 @@ data/models/                                      the speech model, and the OCR 
 ```
 
 A subscription's program and its sign-in live in a volume of Docker's own, not in `data`:
-with the app stopped, `docker volume rm polito-recap_accounts` removes them and signs you out.
+with the app stopped, `docker volume rm lessons-recap_accounts` removes them and signs you out.
 Claude Code and Codex keep no copy of a lecture there; Antigravity CLI keeps its own record of
 every conversation, lectures included, until that volume goes.
 
 To back up, copy `data/courses`. For an automatic hourly copy of the finished lectures to a
 NAS or another disk, set `COMPOSE_PROFILES=backup` and `RECAP_BACKUP` to its mount point,
-and create a `polito-recap` folder in it, writable by the app's user; while the NAS is not
+and create a `lessons-recap` folder in it, writable by the app's user; while the NAS is not
 mounted, the copy waits. This copy is for Linux: Docker Desktop cannot follow a NAS mounted
 later.
 
@@ -244,9 +244,9 @@ Every slow step saves its result when done, so an interrupted lecture resumes wh
 ## Development
 
 ```sh
-git clone https://github.com/capufa/polito-recap
-cd polito-recap
-docker build -t ghcr.io/capufa/polito-recap:latest .
+git clone https://github.com/AleBera03/lessons-recap
+cd lessons-recap
+docker build -t ghcr.io/alebera03/lessons-recap:latest .
 docker compose run --rm setup
 docker compose up -d
 ```

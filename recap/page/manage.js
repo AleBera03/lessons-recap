@@ -32,7 +32,7 @@
           if (!r.ok) throw errorFrom(r.status, body);
           return body;
         });
-      }, function () { throw new Error("PoliTo Recap is not answering: is it still running?"); });
+      }, function () { throw new Error("Lessons Recap is not answering: is it still running?"); });
   }
   function errorFrom(status, body) { return new Error((body && body.error) || "Error " + status); }
 
@@ -341,7 +341,7 @@
         try { body = JSON.parse(x.responseText); } catch (err) { }
         reject(errorFrom(x.status, body));
       };
-      x.onerror = function () { reject(new Error("Upload interrupted: is PoliTo Recap still running?")); };
+      x.onerror = function () { reject(new Error("Upload interrupted: is Lessons Recap still running?")); };
       x.send(file);
     });
   }

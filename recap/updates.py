@@ -1,4 +1,4 @@
-"""Whether there is a new version of PoliTo Recap: once a day GitHub is asked for the latest
+"""Whether there is a new version of Lessons Recap: once a day GitHub is asked for the latest
 release (RECAP_UPDATE_URL, GitHub's by default; off: never), and the home page says so, with the link to the
 release notes. Updating stays the choice of whoever installed it (README, "Updating"). An
 image built from the source, without a version ("dev"), asks nothing."""

@@ -74,7 +74,7 @@ def _home(courses: Path, by_course: dict[str, list[_Entry]]) -> str:
             f'<p class="meta">{_count(len(by_course), "course", "courses")} · '
             f'{_count(lectures, "lecture", "lectures")}</p>{empty}'
             f'<ul class="index-cards">{items}<li>{_NEW_COURSE}</li></ul></main>')
-    return document("PoliTo Recap", body, scripts=_SCRIPTS)
+    return document("Lessons Recap", body, scripts=_SCRIPTS)
 
 
 def _course_index(courses: Path, course: str, entries: list[_Entry]) -> None:

@@ -95,12 +95,12 @@ class _NotReady(_Listener):
 
     def __init__(self, address: str, problem: str):
         super().__init__(address, _NotReadyHandler)
-        body = ('<main class="sheet"><h1>PoliTo Recap is not set up</h1>'
+        body = ('<main class="sheet"><h1>Lessons Recap is not set up</h1>'
                 f'<p class="caveat">{html.escape(problem)}.</p>'
                 '<p>In the folder with <code>docker-compose.yml</code>, run the setup, then start the app '
                 'again:</p><p><code>docker compose run --rm setup</code><br><code>docker compose up -d</code></p>'
                 '<p class="meta">README, “Install”.</p></main>')
-        self.page = document("PoliTo Recap", body, scripts=()).encode("utf-8")
+        self.page = document("Lessons Recap", body, scripts=()).encode("utf-8")
 
 
 class _NotReadyHandler(BaseHTTPRequestHandler):
@@ -339,7 +339,7 @@ def _new_course(courses: Path, name: str) -> dict:
 def run(courses: Path, address: str) -> None:
     """Starts the app, listening on <address> (host:port); if something keeps it from working,
     only the page that says so."""
-    print(f"PoliTo Recap {version()}", flush=True)
+    print(f"Lessons Recap {version()}", flush=True)
     problem = _problem(courses)
     if problem:
         print(f"Not set up: {problem}. Every page says how to fix it.", flush=True)
@@ -351,7 +351,7 @@ def run(courses: Path, address: str) -> None:
     threading.Thread(target=_empty_trash_daily, args=(courses,), name="trash", daemon=True).start()
     server.jobs.requeue_interrupted()
     indexes.write(courses)
-    print(f"PoliTo Recap is up: listening on {address}", flush=True)
+    print(f"Lessons Recap is up: listening on {address}", flush=True)
     server.serve_forever()
 
 

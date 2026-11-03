@@ -1,6 +1,7 @@
 # On pushes to main, on pull requests, before every release (release.yml calls it) and by
 # hand (Actions → checks → Run workflow): the Python compiles and has no unused or undefined
-# names (pyflakes), the JavaScript parses.
+# names (pyflakes), the JavaScript parses, uv.lock is in step with pyproject.toml (the image's
+# build refuses it otherwise).
 name: checks
 
 on:
@@ -20,3 +21,4 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: pipx run pyflakes recap          # pipx: the runner's system Python refuses pip installs
       - run: for f in recap/page/*.js; do node --check "$f"; done
+      - run: pipx run --spec uv==0.12.23 uv lock --check   # the same uv as the Dockerfile

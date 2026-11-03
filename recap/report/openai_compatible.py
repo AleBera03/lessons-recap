@@ -39,8 +39,8 @@ PRESETS = {
     # Without require_parameters OpenRouter may route to a provider that drops the schema.
     "openrouter": Preset("https://openrouter.ai/api/v1", "json_schema", "max_tokens", "google/gemini-3.8-flash",
                          extra={"provider": {"require_parameters": True}},
-                         headers={"HTTP-Referer": "https://github.com/capufa/polito-recap",
-                                  "X-OpenRouter-Title": "PoliTo Recap"}),
+                         headers={"HTTP-Referer": "https://github.com/AleBera03/lessons-recap",
+                                  "X-OpenRouter-Title": "Lessons Recap"}),
     "gemini": Preset("https://generativelanguage.googleapis.com/v1beta/openai", "json_schema", "max_tokens",
                      "gemini-3.8-flash"),
     "mistral": Preset("https://api.mistral.ai/v1", "json_schema", "max_tokens", "mistral-large-latest"),
